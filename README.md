@@ -1,0 +1,2 @@
+# Scraping-Project-Assignment
+A Python program to Scrape the below-mentioned site and bring in the list of the first 6 projects under the “Projects Registered” heading containing the following fields in their detail pages (click on View Details to see the detail): Rera Regd. No, Project Name, Promoter Name (Company Name under Promoter Details Tab), Address of the Promoter (Registered Office Address under Promoter Details Tab), GST No.
