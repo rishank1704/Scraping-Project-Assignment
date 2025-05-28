@@ -1,0 +1,17 @@
+pip install selenium
+
+
+# Update and install dependencies
+sudo apt update
+sudo apt install -y wget unzip xvfb libxi6 libgconf-2-4 libnss3 libasound2 libxss1 libappindicator3-1 libatk-bridge2.0-0 libgtk-3-0
+
+# Install Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
+# Install ChromeDriver matching Chrome version
+CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
+wget -O chromedriver.zip "https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}/linux64/chromedriver-linux64.zip"
+unzip chromedriver.zip
+chmod +x chromedriver-linux64/chromedriver
+sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
