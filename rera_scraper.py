@@ -22,7 +22,7 @@ driver = webdriver.Chrome(options=options)
 driver.get("https://rera.odisha.gov.in/projects/project-list")
 driver.maximize_window()
 
-# Wait for table to load
+# Wait for the table to load
 WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "project-table")))
 
 # Scroll to ensure all elements are loaded
@@ -31,7 +31,7 @@ time.sleep(2)
 
 projects_data = []
 
-# Grab first 6 "View Details" buttons
+# Grab the first 6 "View Details" buttons
 view_buttons = driver.find_elements(By.XPATH, "//a[contains(text(), 'View Details')]")[:6]
 
 for i, button in enumerate(view_buttons):
@@ -82,7 +82,7 @@ if projects_data:
         writer = csv.DictWriter(file, fieldnames=projects_data[0].keys())
         writer.writeheader()
         writer.writerows(projects_data)
-    print("\n✅ Data saved to rera_projects.csv")
+    print("\n Data saved to rera_projects.csv")
 
 # Print data
 for i, data in enumerate(projects_data, 1):
